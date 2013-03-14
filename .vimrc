@@ -1,6 +1,8 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
+syntax on                       " set syntax highlighting on windows
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -12,6 +14,7 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 Bundle 'tpope/vim-fugitive'
+Bundle 'tomasr/molokai'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
@@ -39,21 +42,25 @@ filetype plugin indent on     " required!
 
 " GUI Settings {
 
-    " GVIM- (here instead of .gvimrc)
+" GVIM- (here instead of .gvimrc)
     if has('gui_running')
-	if has("gui_gtk2")
-            set guifont=Consolas\ Regular\ 11,Andale\ Mono\ Regular\ 11,Menlo\ Regular\ 11,Courier\ New\ Regular\ 11
-        else
-            set guifont=Consolas\ Regular:h11,Andale\ Mono\ Regular:h11,Menlo\ Regular:h11,Courier\ New\ Regular:h11
+        set guioptions-=T " Remove the toolbar
+        set lines=40 " 40 lines of text instead of 24
+        if has("gui_gtk2")
+            set guifont=Andale\ Mono\ Regular\ 16,Menlo\ Regular\ 15,Consolas\ Regular\ 16,Courier\ New\ Regular\ 18
+        elseif has("gui_mac")
+            set guifont=Andale\ Mono\ Regular:h16,Menlo\ Regular:h15,Consolas\ Regular:h16,Courier\ New\ Regular:h18
+        elseif has("gui_win32")
+            set guifont=Andale_Mono:h12,Menlo:h12,Consolas:h12,Courier_New:h12
         endif
         if has('gui_macvim')
-            set transparency=5          " Make the window slightly transparent
+            set transparency=5 " Make the window slightly transparent
         endif
     else
         if &term == 'xterm' || &term == 'screen'
-            set t_Co=256                 " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
+            set t_Co=256 " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
         endif
-        "set term=builtin_ansi       " Make arrow and other keys work
+"set term=builtin_ansi " Make arrow and other keys work
     endif
 
 " }
