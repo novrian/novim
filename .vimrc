@@ -1,15 +1,23 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
+" A little modification from Steve Francia's vimrc
+" https://github.com/spf13/spf13-vim
+"
+" This is only my personal use. So use at your own risk
+"
+" Cheers,
+"   Novrian - k4k1_c0der
 
-syntax on                       " set syntax highlighting on windows
+set nocompatible                " be iMproved
+filetype off                    " required!
 
+syntax on                       " set syntax highlighting on
+
+" Vundle Configuration
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
-
 " My Bundles here:
 "
 " original repos on github
