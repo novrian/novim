@@ -9,8 +9,6 @@
 set nocompatible                " be iMproved
 filetype off                    " required!
 
-syntax on                       " set syntax highlighting on
-
 " Vundle Configuration
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -47,6 +45,15 @@ filetype plugin indent on     " required!
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
+
+" General Setting {
+    syntax on                   " Turn syntax highlighting on
+    set mouse=a                 " Automatically enable mouse usage
+    set mousehide               " Hide the mouse cursor while typing
+    scriptencoding utf-8
+    set clipboard=unnamed
+    set number
+" }
 
 " GUI Settings {
 
