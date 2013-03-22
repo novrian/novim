@@ -62,9 +62,9 @@ filetype plugin indent on     " required!
         set guioptions-=T " Remove the toolbar
         set lines=40 " 40 lines of text instead of 24
         if has("gui_gtk2")
-            set guifont=Andale\ Mono\ Regular\ 16,Menlo\ Regular\ 15,Consolas\ Regular\ 16,Courier\ New\ Regular\ 18
+            set guifont=Andale\ Mono\ Regular\ 10,Menlo\ Regular\ 10,Consolas\ Regular\ 10,Courier\ New\ Regular\ 10
         elseif has("gui_mac")
-            set guifont=Andale\ Mono\ Regular:h16,Menlo\ Regular:h15,Consolas\ Regular:h16,Courier\ New\ Regular:h18
+            set guifont=Andale\ Mono\ Regular:h12,Menlo\ Regular:h12,Consolas\ Regular:h12,Courier\ New\ Regular:h12
         elseif has("gui_win32")
             set guifont=Andale_Mono:h12,Menlo:h12,Consolas:h12,Courier_New:h12
         endif
