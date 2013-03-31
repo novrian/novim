@@ -7,7 +7,10 @@
 "   Novrian - k4k1_c0der
 
 set nocompatible                " be iMproved
-filetype off                    " required!
+filetype on                     " required!
+filetype indent on              " Enable filetype-specific indenting
+filetype plugin indent on       " required!
+
 
 " Vundle Configuration
 set rtp+=~/.vim/bundle/vundle/
@@ -28,6 +31,7 @@ Bundle 'tpope/vim-haml.git'
 Bundle 'mattn/zencoding-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'othree/html5.vim'
+Bundle 'git://github.com/vim-ruby/vim-ruby.git'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -35,7 +39,6 @@ Bundle 'FuzzyFinder'
 Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
-filetype plugin indent on     " required!
 "
 " Brief help
 " :BundleList          - list configured bundles
@@ -54,6 +57,8 @@ filetype plugin indent on     " required!
     set clipboard=unnamed
     set number
 " }
+
+autocmd FileType ruby compiler ruby
 
 " Encoding Settings {
 if has("multi_byte")
