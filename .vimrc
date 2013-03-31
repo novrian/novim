@@ -55,9 +55,21 @@ filetype plugin indent on     " required!
     set number
 " }
 
+" Encoding Settings {
+if has("multi_byte")
+    if &termencoding == ""
+        let &termencoding = &encoding
+    endif
+    set encoding=utf-8
+    setglobal fileencoding=utf-8
+    "setglobal bomb
+    set fileencodings=ucs-bom,utf-8,latin1
+endif
+" }
+
 " GUI Settings {
 
-" GVIM- (here instead of .gvimrc)
+    " GVIM- (here instead of .gvimrc)
     if has('gui_running')
         set guioptions-=T " Remove the toolbar
         set lines=40 " 40 lines of text instead of 24
@@ -75,7 +87,7 @@ filetype plugin indent on     " required!
         if &term == 'xterm' || &term == 'screen'
             set t_Co=256 " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
         endif
-"set term=builtin_ansi " Make arrow and other keys work
+        "set term=builtin_ansi " Make arrow and other keys work
     endif
 
 " }
