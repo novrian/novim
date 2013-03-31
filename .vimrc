@@ -84,11 +84,10 @@ filetype plugin indent on     " required!
 colorscheme molokai
 
 " Custom Formatting {
-    set tabstop=4
+    set expandtab
+    set smartindent
     set shiftwidth=4
     set softtabstop=4
-    set expandtab
-    set autoindent
     set nowrap                      " Wrap long lines
 " }
 
