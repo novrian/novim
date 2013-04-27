@@ -1,20 +1,21 @@
 # NoVim
 
+NoVim is Novrian's Vim ;)
 This is my `~/.vim` setup
 Use at your own risk :p
 
-### Installation
+## Installation
 
-* Clone this repo on Vim's Home Dir (Usually on `~/.vim`)
-`git clone git://github.com/novrian/vimrc.git ~/.vim`
+1.  Clone this repo on Vim's Home Dir (Usually on `~/.vim`)
+    `git clone git://github.com/novrian/novim.git ~/.vim`
 
-* Link `.vimrc` files on your Home Directory
-tUX / Unix users
-`ln -s ~/.vim/.vimrc ~/.vimrc`
+2.  Link `.vimrc` files on your Home Directory
+    tUX / Unix users
+    `ln -s ~/.vim/.vimrc ~/.vimrc`
 
-Win user have to manually copy `.vimrc` to
-`C:\Users\YourUsername\_vimrc` or `C:\Documents and Settings\YourUsername\_vimrc`
+    Win user have to manually copy `.vimrc` to
+    `C:\Users\YourUsername\_vimrc` or `C:\Documents and Settings\YourUsername\_vimrc`
 
-# License
+## License
 
 MEH License - Makassar Ethical Hacker :p
