@@ -1,0 +1,10 @@
+tag[s]
+**/tag[s]
+
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+
+.vundle
+.vundle/*
