@@ -31,10 +31,17 @@ Bundle 'tpope/vim-haml.git'
 Bundle 'mattn/zencoding-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'othree/html5.vim'
+Bundle 'joonty/vim-phpqa.git'
 Bundle 'git://github.com/vim-ruby/vim-ruby.git'
+Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'ervandew/supertab'
+Bundle 'joonty/vim-xdebug.git'
+Bundle 'Lokaltog/vim-easymotion'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'taglist.vim'
+Bundle 'project.tar.gz'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 " ...
@@ -57,6 +64,10 @@ Bundle 'git://git.wincent.com/command-t.git'
     set clipboard=unnamed
     set number
 " }
+
+" Leader Map {
+let g:EasyMotion_leader_key = '@'
+" } "
 
 autocmd FileType ruby compiler ruby
 
@@ -108,6 +119,10 @@ colorscheme molokai
     set nowrap                      " Wrap long lines
 " }
 
+" SuperTab Config {
+    let g:SuperTabDefaultCompletionType = ""
+" }
+
 " Status Line {  
     set laststatus=2                                " always show statusbar  
     set statusline=  
@@ -115,7 +130,7 @@ colorscheme molokai
     set statusline+=%f\                             " filename   
     set statusline+=%h%m%r%w                        " status flags
     set statusline+=\[%{strlen(&ft)?&ft:'none'}]    " file type  
-    set statusline+=%=                              " right align remainder  
+    set statusline+=%=                              " right hlign remainder  
     set statusline+=0x%-8B                          " character value  
     set statusline+=%-14(%l,%c%V%)                  " line, character  
     set statusline+=%<%P                            "filel position
