@@ -1,8 +1,8 @@
 NoVim
 =====
 
-NoVim is Novrian's Vim ;)
-This is my `~/.vim` setup
+**NoVim** is Novrian's Vim ;)  
+This is my `~/.vim` setup  
 Use at your own risk :p
 
 Installation
