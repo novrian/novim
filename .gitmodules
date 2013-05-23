@@ -1,3 +1,42 @@
 [submodule "bundle/vundle"]
-	path = bundle/vundle
-	url = git://github.com/gmarik/vundle.git
+    path = bundle/vundle
+    url = git://github.com/gmarik/vundle.git
+[submodule "bundle/vim-fugitive"]
+    path = bundle/vim-fugitive
+    url = git://github.com/tpope/vim-fugitive.git
+[submodule "bundle/molokai"]
+    path = bundle/molokai
+    url = git://github.com/tomasr/molokai.git
+[submodule "bundle/vim-easymotion"]
+    path = bundle/vim-easymotion
+    url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/sparkup"]
+    path = bundle/sparkup
+    url = git://github.com/rstacruz/sparkup.git
+[submodule "bundle/vim-rails"]
+    path = bundle/vim-rails
+    url = git://github.com/tpope/vim-rails.git
+[submodule "bundle/vim-haml"]
+    path = bundle/vim-haml
+    url = git://github.com/tpope/vim-haml.git
+[submodule "bundle/zencoding-vim"]
+    path = bundle/zencoding-vim
+    url = git://github.com/mattn/zencoding-vim.git
+[submodule "bundle/nerdtree"]
+    path = bundle/nerdtree
+    url = git://github.com/scrooloose/nerdtree.git
+[submodule "bundle/html5.vim"]
+    path = bundle/html5.vim
+    url = git://github.com/othree/html5.vim.git
+[submodule "bundle/vim-ruby"]
+    path = bundle/vim-ruby
+    url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "bundle/phpcomplete.vim"]
+    path = bundle/phpcomplete.vim
+    url = git://github.com/shawncplus/phpcomplete.vim.git
+[submodule "bundle/supertab"]
+    path = bundle/supertab
+    url = git://github.com/ervandew/supertab.git
+[submodule "bundle/command-t"]
+    path = bundle/command-t
+    url = git://git.wincent.com/command-t.git
