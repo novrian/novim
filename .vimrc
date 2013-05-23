@@ -31,12 +31,9 @@ Bundle 'tpope/vim-haml.git'
 Bundle 'mattn/zencoding-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'othree/html5.vim'
-Bundle 'joonty/vim-phpqa.git'
-Bundle 'git://github.com/vim-ruby/vim-ruby.git'
+Bundle 'vim-ruby/vim-ruby.git'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'ervandew/supertab'
-Bundle 'joonty/vim-xdebug.git'
-Bundle 'Lokaltog/vim-easymotion'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -63,6 +60,8 @@ Bundle 'git://git.wincent.com/command-t.git'
     scriptencoding utf-8
     set clipboard=unnamed
     set number
+    set backspace=2
+    set backspace=indent,eol,start
 " }
 
 " Leader Map {
