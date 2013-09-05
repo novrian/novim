@@ -23,11 +23,12 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-haml.git'
+Bundle 'tpope/vim-surround'
 Bundle 'tomasr/molokai'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-haml.git'
 Bundle 'mattn/zencoding-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'othree/html5.vim'
@@ -39,6 +40,7 @@ Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'taglist.vim'
 Bundle 'project.tar.gz'
+Bundle 'delimitMate.vim'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 " ...
