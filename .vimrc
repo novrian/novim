@@ -39,7 +39,6 @@ Bundle 'ervandew/supertab'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'taglist.vim'
-Bundle 'project.tar.gz'
 Bundle 'delimitMate.vim'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
@@ -122,6 +121,13 @@ colorscheme molokai
 
 " SuperTab Config {
     let g:SuperTabDefaultCompletionType = ""
+" }
+
+" Tab page settings {
+    nnoremap <C-Left> :tabprevious<CR>
+    nnoremap <C-Right> :tabnext<CR>
+    nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+    nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 " }
 
 " Status Line {  
