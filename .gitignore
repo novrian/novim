@@ -6,5 +6,5 @@ tag[s]
 Session.vim
 .netrwhist
 
-bundle
-!bundle/vundle/*
+bundle/*
+!bundle/vundle
