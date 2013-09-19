@@ -35,6 +35,9 @@ Bundle 'othree/html5.vim'
 Bundle 'vim-ruby/vim-ruby.git'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'ervandew/supertab'
+Bundle 'php-doc-upgrade'
+Bundle 'tetsuo13/Vim-PHP-Doc'
+Bundle 'godlygeek/tabular'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -68,6 +71,11 @@ Bundle 'git://git.wincent.com/command-t.git'
 " Leader Map {
 let g:EasyMotion_leader_key = '@'
 " } "
+
+" php-doc upgrade map
+autocmd FileType php inoremap <C-p> <ESC>:call PhpDocSingle()<CR>i
+autocmd FileType php nnoremap <C-p> :call PhpDocSingle()<CR>
+autocmd FileType php vnoremap <C-p> :call PhpDocRange()<CR>
 
 autocmd FileType ruby compiler ruby
 
