@@ -22,6 +22,7 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
+Bundle 'editorconfig/editorconfig-vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-haml.git'
@@ -38,6 +39,7 @@ Bundle 'ervandew/supertab'
 Bundle 'php-doc-upgrade'
 Bundle 'tetsuo13/Vim-PHP-Doc'
 Bundle 'godlygeek/tabular'
+Bundle 'Shutnik/jshint2.vim'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -136,6 +138,10 @@ colorscheme molokai
     nnoremap <C-Right> :tabnext<CR>
     nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
     nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+" }
+
+" Emmet Settings {
+let g:user_emmet_mode = 'inv'
 " }
 
 " Status Line {  
