@@ -45,6 +45,7 @@ Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'taglist.vim'
 Bundle 'delimitMate.vim'
+Bundle 'editorconfig-vim'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 " ...
