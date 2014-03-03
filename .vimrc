@@ -17,7 +17,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 " My Bundles here:
 "
@@ -40,6 +40,7 @@ Bundle 'php-doc-upgrade'
 Bundle 'tetsuo13/Vim-PHP-Doc'
 Bundle 'godlygeek/tabular'
 Bundle 'Shutnik/jshint2.vim'
+Bundle 'joonty/vim-phpqa'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -134,6 +135,15 @@ colorscheme molokai
     let g:SuperTabDefaultCompletionType = ""
 " }
 
+" PHP-Qa Config {
+	" Don't run messdetector on save (default = 1)
+	let g:phpqa_messdetector_autorun = 0
+	" Don't run codesniffer on save (default = 1)
+	let g:phpqa_codesniffer_autorun = 0
+	" Show code coverage on load (default = 0)
+	let g:phpqa_codecoverage_autorun = 1
+" }
+
 " Tab page settings {
     nnoremap <C-Left> :tabprevious<CR>
     nnoremap <C-Right> :tabnext<CR>
@@ -145,15 +155,15 @@ colorscheme molokai
 let g:user_emmet_mode = 'inv'
 " }
 
-" Status Line {  
-    set laststatus=2                                " always show statusbar  
-    set statusline=  
+" Status Line {
+    set laststatus=2                                " always show statusbar
+    set statusline=
     set statusline+=%-10.3n\                        " buffer number
-    set statusline+=%f\                             " filename   
+    set statusline+=%f\                             " filename
     set statusline+=%h%m%r%w                        " status flags
-    set statusline+=\[%{strlen(&ft)?&ft:'none'}]    " file type  
-    set statusline+=%=                              " right hlign remainder  
-    set statusline+=0x%-8B                          " character value  
-    set statusline+=%-14(%l,%c%V%)                  " line, character  
+    set statusline+=\[%{strlen(&ft)?&ft:'none'}]    " file type
+    set statusline+=%=                              " right hlign remainder
+    set statusline+=0x%-8B                          " character value
+    set statusline+=%-14(%l,%c%V%)                  " line, character
     set statusline+=%<%P                            "filel position
-"}  
+"}
