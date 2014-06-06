@@ -22,6 +22,7 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
+Bundle 'scrooloose/syntastic'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails.git'
@@ -39,8 +40,6 @@ Bundle 'ervandew/supertab'
 Bundle 'php-doc-upgrade'
 Bundle 'tetsuo13/Vim-PHP-Doc'
 Bundle 'godlygeek/tabular'
-Bundle 'Shutnik/jshint2.vim'
-Bundle 'joonty/vim-phpqa'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -135,15 +134,6 @@ colorscheme molokai
     let g:SuperTabDefaultCompletionType = ""
 " }
 
-" PHP-Qa Config {
-	" Don't run messdetector on save (default = 1)
-	let g:phpqa_messdetector_autorun = 0
-	" Don't run codesniffer on save (default = 1)
-	let g:phpqa_codesniffer_autorun = 0
-	" Show code coverage on load (default = 0)
-	let g:phpqa_codecoverage_autorun = 1
-" }
-
 " Tab page settings {
     nnoremap <C-Left> :tabprevious<CR>
     nnoremap <C-Right> :tabnext<CR>
@@ -153,6 +143,18 @@ colorscheme molokai
 
 " Emmet Settings {
 let g:user_emmet_mode = 'inv'
+" }
+
+" Syntastic Settings {
+
+" == General Setting ==
+let g:syntastic_aggregate_errors = 1
+
+" == HTML Setting ==
+let g:syntastic_html_tidy_exec = 'tidy'
+
+" == PHP Setting ==
+let g:syntastic_php_checkers = ['php', 'tidy']
 " }
 
 " Status Line {
