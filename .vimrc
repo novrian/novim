@@ -11,7 +11,6 @@ filetype on                     " required!
 filetype indent on              " Enable filetype-specific indenting
 filetype plugin indent on       " required!
 
-
 " Vundle Configuration
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -101,7 +100,8 @@ endif
         set guioptions-=T " Remove the toolbar
         set lines=40 " 40 lines of text instead of 24
         if has("gui_gtk2")
-            set guifont=Andale\ Mono\ Regular\ 10,Menlo\ Regular\ 10,Consolas\ Regular\ 10,Courier\ New\ Regular\ 10
+            set guifont=Dejavu\ Sans\ Mono\ Bold\ 10,Monaco\ Bold\ 10,Menlo\ Regular\ 10,Consolas\ Regular\ 10,Courier\ New\ Regular\ 10
+            " set guifont=Monaco\ Bold\ 9,Andale\ Mono\ Regular\ 10,Menlo\ Regular\ 10,Consolas\ Regular\ 10,Courier\ New\ Regular\ 10
         elseif has("gui_mac")
             set guifont=Andale\ Mono\ Regular:h12,Menlo\ Regular:h12,Consolas\ Regular:h12,Courier\ New\ Regular:h12
         elseif has("gui_win32")
@@ -222,12 +222,12 @@ let g:syntastic_php_checkers = ['php', 'tidy']
     set statusline+=0x%-8B                          " character value
     set statusline+=%-14(%l,%c%V%)                  " line, character
     set statusline+=%<%P                            "filel position
-"}
-
-" Highlight on column 80 {
-match errorMsg /\%>80v.\+/
 " }
 
-" Highlight Tab {
-match errorMsg /[^t]\zs\t\+/
+" Highlighting Column 80 {
+highlight ColorColumn ctermbg=000 guibg=#2c2d27
+let &colorcolumn="80,".join(range(81,999),",")
 " }
+
+set cursorcolumn
+set cursorline
