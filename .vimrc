@@ -169,7 +169,7 @@ colorscheme molokai
         return ret
     endfunction
 
-	  set tabline=%!NoShortTabLine()
+	  " set tabline=%!NoShortTabLine()
 
     function NoShortTabLabel()
         let bufnrlist = tabpagebuflist(v:lnum)
@@ -186,7 +186,7 @@ colorscheme molokai
         return ret
     endfunction
 
-    set guitablabel=%{NoShortTabLabel()}
+    " set guitablabel=%{NoShortTabLabel()}
 
     nnoremap <C-Left> :tabprevious<CR>
     nnoremap <C-Right> :tabnext<CR>
