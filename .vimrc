@@ -17,35 +17,39 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
-" My Bundles here:
+Plugin 'gmarik/vundle'
+" My Plugins here:
 "
 " original repos on github
-Bundle 'scrooloose/syntastic'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-haml.git'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-obsession'
-Bundle 'tomasr/molokai'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'mattn/emmet-vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'othree/html5.vim'
-Bundle 'vim-ruby/vim-ruby.git'
-Bundle 'shawncplus/phpcomplete.vim'
-Bundle 'ervandew/supertab'
-Bundle 'php-doc-upgrade'
-Bundle 'godlygeek/tabular'
-Bundle 'msanders/snipmate.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-haml.git'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-obsession'
+Plugin 'tomasr/molokai'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'othree/html5.vim'
+Plugin 'vim-ruby/vim-ruby.git'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'ervandew/supertab'
+Plugin 'php-doc-upgrade'
+Plugin 'godlygeek/tabular'
+" Plugin 'msanders/snipmate.vim'
+Plugin 'garbas/vim-snipmate'
+" Snipmate Dependency
+Plugin 'marcweber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
 " vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'taglist.vim'
-Bundle 'delimitMate.vim'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+Plugin 'taglist.vim'
+Plugin 'delimitMate.vim'
 " non github repos
-Bundle 'git://git.wincent.com/command-t.git'
+Plugin 'git://git.wincent.com/command-t.git'
 " ...
 
 "
