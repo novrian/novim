@@ -38,6 +38,7 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'ervandew/supertab'
 Plugin 'php-doc-upgrade'
 Plugin 'godlygeek/tabular'
+Plugin 'bling/vim-airline'
 " Plugin 'msanders/snipmate.vim'
 Plugin 'garbas/vim-snipmate'
 " Snipmate Dependency
@@ -48,6 +49,7 @@ Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'taglist.vim'
 Plugin 'delimitMate.vim'
+Plugin 'bufexplorer.zip'
 " non github repos
 Plugin 'git://git.wincent.com/command-t.git'
 " ...
@@ -192,10 +194,10 @@ colorscheme molokai
 
     " set guitablabel=%{NoShortTabLabel()}
 
-    nnoremap <C-Left> :tabprevious<CR>
-    nnoremap <C-Right> :tabnext<CR>
-    nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-    nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+    nnoremap <C-Down> :tabprevious<CR>
+    nnoremap <C-Up> :tabnext<CR>
+    nnoremap <silent> <A-Down> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+    nnoremap <silent> <A-Up> :execute 'silent! tabmove ' . tabpagenr()<CR>
 " }
 
 " Emmet Settings {
@@ -234,3 +236,11 @@ let &colorcolumn="80,".join(range(81,999),",")
 
 set cursorcolumn
 set cursorline
+
+" Bufexplorer Mapping {
+nnoremap <M-F12> :BufExplorer<CR>
+nnoremap <C-Left> :bp<CR>
+nnoremap <C-Right> :bn<CR>
+nnoremap <C-S-Left> :bf<CR>
+nnoremap <C-S-Right> :bl<CR>
+" }
