@@ -244,3 +244,8 @@ nnoremap <C-Right> :bn<CR>
 nnoremap <C-S-Left> :bf<CR>
 nnoremap <C-S-Right> :bl<CR>
 " }
+
+" Airline Configuration {
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
+" }
