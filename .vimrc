@@ -42,6 +42,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'garbas/vim-snipmate'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'honza/vim-snippets'
 " Snipmate Dependency
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -250,4 +251,10 @@ nnoremap <C-S-Right> :bl<CR>
 " Airline Configuration {
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'wombat'
+" }
+
+" Snipmate Configuration {
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['php'] = 'php'
 " }
