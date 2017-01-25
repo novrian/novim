@@ -35,12 +35,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'othree/html5.vim'
 Plugin 'vim-ruby/vim-ruby.git'
 Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'ervandew/supertab'
 Plugin 'php-doc-upgrade'
 Plugin 'godlygeek/tabular'
-Plugin 'bling/vim-airline'
-" Plugin 'msanders/snipmate.vim'
 Plugin 'garbas/vim-snipmate'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " Snipmate Dependency
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -133,10 +132,6 @@ colorscheme molokai
     set shiftwidth=4
     set softtabstop=4
     set nowrap                      " Wrap long lines
-" }
-
-" SuperTab Config {
-    let g:SuperTabDefaultCompletionType = ""
 " }
 
 " Tab page settings {
