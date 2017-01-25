@@ -105,7 +105,7 @@ endif
         set guioptions-=T " Remove the toolbar
         set lines=40 " 40 lines of text instead of 24
         if has("gui_gtk2")
-            set guifont=Bitstream\ Vera\ Sans\ Mono\ 10,Dejavu\ Sans\ Mono\ 10,Monaco\ Bold\ 10,Menlo\ Regular\ 10,Consolas\ Regular\ 10,Courier\ New\ Regular\ 10
+            set guifont=Monaco\ 10,Menlo\ Regular\ 10,Consolas\ Regular\ 10,Courier\ New\ Regular\ 10
             " set guifont=Monaco\ Bold\ 9,Andale\ Mono\ Regular\ 10,Menlo\ Regular\ 10,Consolas\ Regular\ 10,Courier\ New\ Regular\ 10
         elseif has("gui_mac")
             set guifont=Andale\ Mono\ Regular:h12,Menlo\ Regular:h12,Consolas\ Regular:h12,Courier\ New\ Regular:h12
