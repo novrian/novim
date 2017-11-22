@@ -258,5 +258,6 @@ let g:snipMate.scope_aliases['php'] = 'php'
 
 " PHP Documentor ViM {
 let g:pdv_template_dir = $HOME . "/.vim/after/pdv_templates/templates"
-autocmd FileType php nnoremap <C-p> :call pdv#DocumentWithSnip()<CR>
+autocmd FileType php nnoremap <C-p> :call pdv#DocumentWithSnip()<CR><ESC>
+autocmd FileType php inoremap <C-p> <ESC>:call pdv#DocumentWithSnip()<CR>i
 " }
