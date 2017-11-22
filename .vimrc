@@ -37,12 +37,14 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'othree/html5.vim'
 Plugin 'vim-ruby/vim-ruby.git'
 Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'php-doc-upgrade'
 Plugin 'godlygeek/tabular'
 Plugin 'garbas/vim-snipmate'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'honza/vim-snippets'
+Plugin 'tobyS/vmustache'
+Plugin 'tobyS/pdv'
+Plugin 'SirVer/ultisnips'
 " Snipmate Dependency
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -85,11 +87,6 @@ filetype plugin indent on    " required
 " Leader Map {
 let g:EasyMotion_leader_key = '@'
 " } "
-
-" php-doc upgrade map
-autocmd FileType php inoremap <C-p> <ESC>:call PhpDocSingle()<CR>i
-autocmd FileType php nnoremap <C-p> :call PhpDocSingle()<CR>
-autocmd FileType php vnoremap <C-p> :call PhpDocRange()<CR>
 
 autocmd FileType ruby compiler ruby
 
@@ -257,4 +254,9 @@ let g:airline_theme = 'wombat'
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['php'] = 'php'
+" }
+
+" PHP Documentor ViM {
+let g:pdv_template_dir = $HOME . "/.vim/bundle/pdv/templates"
+autocmd FileType php nnoremap <C-p> :call pdv#DocumentWithSnip()<CR>
 " }
