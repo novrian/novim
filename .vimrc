@@ -45,6 +45,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'tobyS/vmustache'
 Plugin 'tobyS/pdv'
 Plugin 'SirVer/ultisnips'
+Plugin 'scrooloose/nerdcommenter'
 " Snipmate Dependency
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
