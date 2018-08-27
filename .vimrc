@@ -46,6 +46,7 @@ Plugin 'tobyS/vmustache'
 Plugin 'tobyS/pdv'
 Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'ctrlpvim/ctrlp.vim'
 " Snipmate Dependency
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -56,7 +57,7 @@ Plugin 'taglist.vim'
 Plugin 'delimitMate.vim'
 Plugin 'bufexplorer.zip'
 " non github repos
-Plugin 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 " ...
 
 " All of your Plugins must be added before the following line
@@ -258,7 +259,12 @@ let g:snipMate.scope_aliases['php'] = 'php'
 " }
 
 " PHP Documentor ViM {
-let g:pdv_template_dir = $HOME . "/.vim/after/pdv_templates/templates"
-autocmd FileType php nnoremap <C-p> :call pdv#DocumentWithSnip()<CR><ESC>
-autocmd FileType php inoremap <C-p> <ESC>:call pdv#DocumentWithSnip()<CR>i
+"let g:pdv_template_dir = $HOME . "/.vim/after/pdv_templates/templates"
+"autocmd FileType php nnoremap <C-p> :call pdv#DocumentWithSnip()<CR><ESC>
+"autocmd FileType php inoremap <C-p> <ESC>:call pdv#DocumentWithSnip()<CR>i
+" }
+
+" NERDTree Mapping & Configuration {
+map <C-\> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " }
