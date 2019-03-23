@@ -49,6 +49,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'iamcco/markdown-preview.vim'
+Plugin 'posva/vim-vue'
 " Snipmate Dependency
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -58,6 +59,7 @@ Plugin 'FuzzyFinder'
 Plugin 'taglist.vim'
 Plugin 'delimitMate.vim'
 Plugin 'bufexplorer.zip'
+Plugin 'python.vim'
 " non github repos
 " Plugin 'git://git.wincent.com/command-t.git'
 " ...
