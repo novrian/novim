@@ -50,6 +50,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'iamcco/markdown-preview.vim'
 Plugin 'posva/vim-vue'
+Plugin 'neoclide/coc.nvim'
 " Snipmate Dependency
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -315,3 +316,6 @@ augroup autoformat_settings
   " Alternative: autocmd FileType python AutoFormatBuffer autopep8
 augroup END
 "
+
+" Setup prettier command
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
