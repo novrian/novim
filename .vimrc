@@ -50,6 +50,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'iamcco/markdown-preview.vim'
 Plugin 'posva/vim-vue'
+Plugin 'neoclide/coc.nvim'
 " Snipmate Dependency
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -256,8 +257,8 @@ set cursorline
 
 " Bufexplorer Mapping {
 nnoremap <M-F12> :BufExplorer<CR>
-nnoremap <C-Left> :bp<CR>
-nnoremap <C-Right> :bn<CR>
+nnoremap <C-h> :bp<CR>
+nnoremap <C-l> :bn<CR>
 nnoremap <C-S-Left> :bf<CR>
 nnoremap <C-S-Right> :bl<CR>
 " }
@@ -305,7 +306,7 @@ imap <silent> <F9> <Plug>StopMarkdownPreview
 " Google Code Formatter Settings
 augroup autoformat_settings
   autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  " autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
   autocmd FileType dart AutoFormatBuffer dartfmt
   autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType gn AutoFormatBuffer gn
@@ -315,3 +316,6 @@ augroup autoformat_settings
   " Alternative: autocmd FileType python AutoFormatBuffer autopep8
 augroup END
 "
+
+" Setup prettier command
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
