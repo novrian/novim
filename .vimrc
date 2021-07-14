@@ -256,8 +256,8 @@ set cursorline
 
 " Bufexplorer Mapping {
 nnoremap <M-F12> :BufExplorer<CR>
-nnoremap <C-Left> :bp<CR>
-nnoremap <C-Right> :bn<CR>
+nnoremap <C-h> :bp<CR>
+nnoremap <C-l> :bn<CR>
 nnoremap <C-S-Left> :bf<CR>
 nnoremap <C-S-Right> :bl<CR>
 " }
