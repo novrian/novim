@@ -54,6 +54,8 @@ Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'jparise/vim-graphql'
 Plugin 'cespare/vim-toml'
 Plugin 'fatih/vim-go'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'maxmellon/vim-jsx-pretty'
 " Snipmate Dependency
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
