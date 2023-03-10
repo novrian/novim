@@ -2,12 +2,12 @@ call plug#begin()
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
-Plug 'marko-cerovac/material.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'ray-x/go.nvim'
@@ -16,6 +16,13 @@ Plug 'rmagatti/auto-session'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 Plug 'windwp/nvim-autopairs'
+Plug 'jghauser/mkdir.nvim'
+Plug 'tpope/vim-repeat'
+Plug 'ggandor/leap.nvim'
+
+" Colorscheme
+Plug 'marko-cerovac/material.nvim'
+Plug 'tanvirtin/monokai.nvim'
 
 " Cmp related plugin
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -28,14 +35,15 @@ Plug 'hrsh7th/vim-vsnip'
 
 call plug#end()
 
-let g:material_style = 'deep ocean'
-colorscheme material
+syntax on
 
 set number
 set nowrap
 set termguicolors
 set cursorcolumn
 set cursorline
+
+colorscheme monokai
 
 lua << EOF
 -- setup nvim treesitter
@@ -87,6 +95,14 @@ require("todo-comments").setup{}
 
 -- setup go
 require('go').setup()
+local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.go",
+    callback = function()
+        require('go.format').goimport()
+    end,
+    group = format_sync_grp,
+})
 
 -- Set up nvim-cmp.
 local cmp = require'cmp'
@@ -138,6 +154,9 @@ require("bufferline").setup{}
 
 -- setup nvim-autopairs
 require("nvim-autopairs").setup {}
+
+-- setup leap motion
+require('leap').add_default_mappings()
 EOF
 
 
