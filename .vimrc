@@ -19,6 +19,7 @@ Plug 'windwp/nvim-autopairs'
 Plug 'jghauser/mkdir.nvim'
 Plug 'tpope/vim-repeat'
 Plug 'ggandor/leap.nvim'
+Plug 'm4xshen/smartcolumn.nvim'
 
 " Colorscheme
 Plug 'marko-cerovac/material.nvim'
@@ -157,11 +158,15 @@ require("nvim-autopairs").setup {}
 
 -- setup leap motion
 require('leap').add_default_mappings()
+
+-- setup smart column
+require("smartcolumn").setup()
 EOF
 
-
+" nvim tree toggle mapping "
 map <C-\> :NvimTreeToggle<CR>
 
+" telescope mapping "
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
