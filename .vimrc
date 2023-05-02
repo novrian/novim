@@ -20,6 +20,8 @@ Plug 'jghauser/mkdir.nvim'
 Plug 'tpope/vim-repeat'
 Plug 'ggandor/leap.nvim'
 Plug 'm4xshen/smartcolumn.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'jparise/vim-graphql'
 
 " Colorscheme
 Plug 'marko-cerovac/material.nvim'
@@ -140,12 +142,29 @@ cmp.setup({
   }
 )
 -- Set up lspconfig.
+local configs = require('lspconfig/configs')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+-- Golang LSP Config
 require('lspconfig')['gopls'].setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 }
+-- Emmet LSP Config
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+require('lspconfig')['emmet_ls'].setup({
+    -- on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'php' },
+    init_options = {
+      html = {
+        options = {
+          -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+          ["bem.enabled"] = true,
+        },
+      },
+    }
+})
 
 -- setup auto-session
 require("auto-session").setup{}
