@@ -57,6 +57,7 @@ Plug 'hrsh7th/vim-vsnip'
 
 " CodeCompanion {
 " ==============================================================================
+Plug 'github/copilot.vim'
 Plug 'olimorris/codecompanion.nvim'
 " } ============================================================================
 
@@ -242,7 +243,45 @@ require("smartcolumn").setup()
 
 require("nvim-surround").setup()
 
-require("codecompanion").setup()
+require("codecompanion").setup({
+  strategies = {
+    chat = {
+      adapter = "copilot",
+    },
+    inline = {
+      adapter = "copilot",
+    },
+    cmd = {
+      adapter = "copilot",
+    }
+  },
+  display = {
+    chat = {
+      -- Options to customize the UI of the chat buffer
+      window = {
+        layout = "vertical", -- float|vertical|horizontal|buffer
+        position = "right", -- left|right|top|bottom (nil will default depending on vim.opt.plitright|vim.opt.splitbelow)
+        border = "single",
+        height = 0.8,
+        width = 0.25,
+        relative = "editor",
+        full_height = true, -- when set to false, vsplit will be used to open the chat buffer vs. botright/topleft vsplit
+        opts = {
+          breakindent = true,
+          cursorcolumn = false,
+          cursorline = false,
+          foldcolumn = "0",
+          linebreak = true,
+          list = false,
+          numberwidth = 1,
+          signcolumn = "no",
+          spell = false,
+          wrap = true,
+        },
+      },
+    },
+  },
+})
 EOF
 
 " nvim tree toggle mapping "
