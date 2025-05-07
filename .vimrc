@@ -23,6 +23,7 @@ Plug 'ggandor/leap.nvim'
 Plug 'm4xshen/smartcolumn.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 Plug 'jparise/vim-graphql'
+Plug 'MeanderingProgrammer/render-markdown.nvim'
 
 " Colorscheme
 Plug 'marko-cerovac/material.nvim'
@@ -243,6 +244,8 @@ require("smartcolumn").setup()
 
 require("nvim-surround").setup()
 
+-- begin CodeCompanion Setup
+-- ================================================================================
 require("codecompanion").setup({
   strategies = {
     chat = {
@@ -277,10 +280,19 @@ require("codecompanion").setup({
           signcolumn = "no",
           spell = false,
           wrap = true,
-        },
+        }
       },
     },
   },
+})
+vim.keymap.set("n", "<Leader><Space>", function()
+  require("codecompanion").chat()
+end, { desc = "CodeCompanion Chat" })
+-- ================================================================================
+-- end CodeCompanion Setup
+
+require('render-markdown').setup({
+    file_types = { 'markdown', 'codecompanion' },
 })
 EOF
 
