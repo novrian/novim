@@ -1,1 +1,0 @@
-../../bundle/Vim-PHP-Doc/php.vim
