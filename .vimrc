@@ -24,6 +24,8 @@ Plug 'm4xshen/smartcolumn.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 Plug 'jparise/vim-graphql'
 Plug 'MeanderingProgrammer/render-markdown.nvim'
+Plug 'folke/trouble.nvim'
+Plug 'stevearc/conform.nvim'
 
 " Colorscheme
 Plug 'marko-cerovac/material.nvim'
@@ -293,6 +295,26 @@ end, { desc = "CodeCompanion Chat" })
 
 require('render-markdown').setup({
     file_types = { 'markdown', 'codecompanion' },
+})
+
+vim.keymap.set("n", "<Leader>xx", function()
+    require("trouble").toggle('diagnostics')
+end, { desc = "Toggle Trouble" })
+
+require("conform").setup({
+  formatters_by_ft = {
+    lua = { "stylua" },
+    -- Conform will run the first available formatter
+    javascript = { "prettierd", "prettier", stop_after_first = true },
+    typescript = { "prettierd", "prettier", stop_after_first = true },
+    typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+  },
+})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
 })
 EOF
 
