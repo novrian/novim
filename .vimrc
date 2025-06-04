@@ -316,6 +316,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     require("conform").format({ bufnr = args.buf })
   end,
 })
+
+if vim.g.neovide then
+  vim.g.neovide_opacity = 0.1
+  vim.g.transparency = 0.8
+  vim.g.neovide_window_blurred = true
+end
+
 EOF
 
 " nvim tree toggle mapping "
