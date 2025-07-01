@@ -88,6 +88,10 @@ require'nvim-treesitter.configs'.setup {
   -- Automatically install missing parsers when entering buffer
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
   auto_install = true,
+
+  highlight = {
+    enable = true,
+  },
 }
 
 -- setup lualine
@@ -252,6 +256,7 @@ require("codecompanion").setup({
   strategies = {
     chat = {
       adapter = "copilot",
+      model = "claude-3.7-sonnet",
     },
     inline = {
       adapter = "copilot",
@@ -286,6 +291,17 @@ require("codecompanion").setup({
       },
     },
   },
+  adapters = {
+    copilot = function()
+      return require("codecompanion.adapters").extend("copilot", {
+        schema = {
+          model = {
+            default = "claude-3.7-sonnet",
+          },
+        },
+      })
+    end,
+  },
 })
 vim.keymap.set("n", "<Leader><Space>", function()
   require("codecompanion").chat()
@@ -297,8 +313,9 @@ require('render-markdown').setup({
     file_types = { 'markdown', 'codecompanion' },
 })
 
+-- Trouble setup
 vim.keymap.set("n", "<Leader>xx", function()
-    require("trouble").toggle('diagnostics')
+  require("trouble").toggle('diagnostics')
 end, { desc = "Toggle Trouble" })
 
 require("conform").setup({
@@ -333,3 +350,5 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fr <cmd>Telescope lsp_references<cr>
+nnoremap <leader>fi <cmd>Telescope lsp_implementations<cr>
