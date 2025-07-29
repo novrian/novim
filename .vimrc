@@ -26,6 +26,7 @@ Plug 'jparise/vim-graphql'
 Plug 'MeanderingProgrammer/render-markdown.nvim'
 Plug 'folke/trouble.nvim'
 Plug 'stevearc/conform.nvim'
+Plug 'j-hui/fidget.nvim'
 
 " Colorscheme
 Plug 'marko-cerovac/material.nvim'
@@ -61,8 +62,11 @@ Plug 'hrsh7th/vim-vsnip'
 " CodeCompanion {
 " ==============================================================================
 Plug 'github/copilot.vim'
+Plug 'echasnovski/mini.diff'
 Plug 'olimorris/codecompanion.nvim'
 " } ============================================================================
+
+Plug 'rebelot/kanagawa.nvim'
 
 call plug#end()
 
@@ -74,7 +78,7 @@ set termguicolors
 set cursorcolumn
 set cursorline
 
-colorscheme monokai
+colorscheme kanagawa-dragon
 
 lua << EOF
 -- setup nvim treesitter
@@ -260,9 +264,11 @@ require("codecompanion").setup({
     },
     inline = {
       adapter = "copilot",
+      model = "claude-3.7-sonnet",
     },
     cmd = {
       adapter = "copilot",
+      model = "claude-3.7-sonnet",
     }
   },
   display = {
@@ -290,6 +296,9 @@ require("codecompanion").setup({
         }
       },
     },
+    diff = {
+      provider = "mini_diff",
+    },
   },
   adapters = {
     copilot = function()
@@ -308,6 +317,8 @@ vim.keymap.set("n", "<Leader><Space>", function()
 end, { desc = "CodeCompanion Chat" })
 -- ================================================================================
 -- end CodeCompanion Setup
+
+require("fidget").setup()
 
 require('render-markdown').setup({
     file_types = { 'markdown', 'codecompanion' },
