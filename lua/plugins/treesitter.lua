@@ -15,7 +15,8 @@ return {
       highlight = {
         enable = true,
       },
-    }
+    },
+    lazy = false,
   },
   "nvim-treesitter/nvim-treesitter-textobjects",
 }

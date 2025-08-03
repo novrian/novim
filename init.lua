@@ -6,5 +6,4 @@ vim.cmd([[
   set termguicolors
   set cursorcolumn
   set cursorline
-  colorscheme kanawaga-dragon
 ]])
