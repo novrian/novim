@@ -20,7 +20,10 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.8",
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-ui-select.nvim',
+    },
     keys = {
       { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
       { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
@@ -30,7 +33,16 @@ return {
       { "<leader>fi", "<cmd>Telescope lsp_implementations<cr>", desc = "LSP Implementations" },
     },
     config = function()
-      require("telescope").setup({})
+      require("telescope").setup({
+        extensions = {
+          ["ui-select"] = {
+            require("telescope.themes").get_dropdown {
+              -- even more opts
+            }
+          },
+        },
+      })
+      require("telescope").load_extension("ui-select")
     end,
   },
 
@@ -115,6 +127,10 @@ return {
     "rmagatti/auto-session",
     lazy = false,
     opts = {},
+    config = function()
+      require("auto-session").setup{}
+      vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+    end,
   },
   "editorconfig/editorconfig-vim",
   {
@@ -141,6 +157,8 @@ return {
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
-    opts = {},
+    opts = {
+      file_types = { 'markdown', 'codecompanion', 'copilot-chat' },
+    },
   }
 }
