@@ -32,6 +32,7 @@ return {
       { "<leader>fr", "<cmd>Telescope lsp_references<cr>", desc = "LSP References" },
       { "<leader>fi", "<cmd>Telescope lsp_implementations<cr>", desc = "LSP Implementations" },
     },
+    lazy = false,
     config = function()
       require("telescope").setup({
         extensions = {
@@ -160,5 +161,6 @@ return {
     opts = {
       file_types = { 'markdown', 'codecompanion', 'copilot-chat' },
     },
-  }
+  },
+  'lewis6991/gitsigns.nvim',
 }

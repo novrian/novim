@@ -17,8 +17,9 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
-    config = function()
-      require("kanagawa").setup()
+    opts = {},
+    config = function(_, opts)
+      require("kanagawa").setup(opts)
       vim.cmd("colorscheme kanagawa-dragon")
     end,
   },

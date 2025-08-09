@@ -74,8 +74,8 @@ return {
     'CopilotC-Nvim/CopilotChat.nvim',
     dependencies = {
       { "nvim-lua/plenary.nvim", branch = "master" },
+      'nvim-telescope/telescope.nvim',
     },
-    lazy = false,
     build = "make tiktoken",
     opts = {
       model = "claude-3.7-sonnet", -- default model
@@ -84,17 +84,21 @@ return {
       },
       question_header = "# Saya",
       mappings = {
+        complete = {
+          insert = "<Tab>",
+        },
         show_diff = {
           full_diff = true,
         },
       },
     },
+    lazy = false,
     keys = {
       { "<Leader><Space>", "<cmd>CopilotChatToggle<cr>", desc = "Open Copilot Chat" },
     },
     config = function(_, opts)
-      -- vim.opt.splitright = true
-      -- vim.opt.completeopt = { "menu", "menuone", "noselect", "noinsert", "popup" }
+      vim.opt.splitright = true
+      vim.opt.completeopt = { "menu", "menuone", "noselect", "noinsert", "popup" }
       require("CopilotChat").setup(opts)
     end,
   },
